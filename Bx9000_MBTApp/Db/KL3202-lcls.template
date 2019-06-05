@@ -1,0 +1,135 @@
+#==============================================================================
+#
+# Abs:  RTD module KL3202 template, customized for LCLS conventions
+#
+# Name: KL3202-lcls.template
+# 
+# Macros: 
+#
+#	APC	(All Purpose Controller) 
+#		First three fields of APC device name, for example: APC:LTU0:1
+#		(Numbering convention: Each set of I/O modules that share a single
+#		controller is one unit. All PVs associated with this set of modules 
+#		should share this APC device name.)
+#
+#	COUPLER Node name of coupler, for example: bkhf-ltu0-tm01
+#
+#	SLOT	Slot number of I/O module. Slot numbers increment from left to right.
+#		The first module to the right of the coupler is in slot 1.
+#
+#	D	Type of device (string), for example: "RTD" 
+#               or device description, for example "50B1"
+#
+#	SLOT	Slot number of I/O module. Slot numbers increment from left to right.
+#		The first module to the right of the coupler is in slot 1.
+#
+#	CH	Channel number, from 1 to 4	
+#
+#	ALIAS   Device name, for example: QUAD:LTU0:110:TEMP
+#
+#       SCAN    Data acquisition rate in EPICS record SCAN format. If you are not using data
+#               averaging, set this to "1 second". Otherwise, set it to your desired 
+#               data acquisition rate. It will set the scan rate for the low-level PVs.
+#               The high-level PVs (ALIAS) still scan at "1 second".
+#               
+# 	NSAM	Number of samples to average in _AVG compress record.
+#               Set to "1" if no averaging desired.
+#
+#       ASG     Access Security Group (used by RTDs for MPS)
+#
+#==============================================================================
+
+record(ai, "$(ALIAS)") {
+  field(DESC,"$(D)")
+  field(SCAN, "1 second")
+  field(INP, "$(ALIAS)_AVG PP MS")
+  field(PREC, "$(P)")
+  field(EGU, "DegF")
+  field(HOPR, "$(H)")
+  field(LOPR, "$(L)")
+  field(HIHI, "$(HH)")
+  field(LOLO, "$(LL)")
+  field(HIGH, "$(HI)")
+  field(LOW, "$(LO)")
+  field(HHSV, "MAJOR")
+  field(LLSV, "MAJOR")
+  field(HSV, "MINOR")
+  field(LSV, "MINOR")
+  field(HYST, "$(HY)")
+  field(ADEL, "$(AD)")
+  field(MDEL, "$(MD)")
+  field(ASG, "$(ASG)")
+}
+
+# Optional averaging
+# If no averaging desired, 
+#    set $(NSAM) to "1" and $(SCAN) to "1 second"
+#---------------------------------------
+record(compress, "$(ALIAS)_AVG") {
+  field(DESC, "Avg sig samples")
+  field(INP, "$(ALIAS)_DATA NPP MS")
+  field(ALG, "N to 1 Average")
+  field(N, "$(NSAM)")
+  field(NSAM, "1")
+  field(PREC, "$(P)")
+  field(ASG, "$(ASG)")
+}
+
+record(compress, "$(ALIAS)_DATA") {
+  field(DESC, "Samples to avg")
+  field(INP, "$(APC):M$(SLOT)_CH$(CH)_TEMP NPP MS")
+  field(ALG, "Circular Buffer")
+  field(NSAM, "$(NSAM)")
+  field(PREC, "$(P)")
+  field(ASG, "$(ASG)")
+}
+#-----------------------------------------
+
+# Convert degC to degF
+# .VAL and .A  used by generic KL3314 diagnostic display
+record(calc, "$(APC):M$(SLOT)_CH$(CH)_TEMP") {
+  field(DESC, "$(D)")
+  field(FLNK, "$(ALIAS)")
+  field(CALC, "A*1.8+32")
+  field(INPA, "$(APC):M$(SLOT)_CH$(CH)_SIG NPP MS")
+  field(EGU, "DegF")
+  field(PREC, "$(P)")
+  field(HOPR, "$(H)")
+  field(LOPR, "$(L)")
+  field(HIHI, "$(HH)")
+  field(LOLO, "$(LL)")
+  field(HIGH, "$(HI)")
+  field(LOW, "$(LO)")
+  field(HHSV, "MAJOR")
+  field(LLSV, "MAJOR")
+  field(HSV, "MINOR")
+  field(LSV, "MINOR")
+  field(HYST, "$(HY)")
+  field(ADEL, "$(AD)")
+  field(MDEL, "$(MD)")
+  field(FLNK, "$(ALIAS)_DATA")
+  field(ASG, "$(ASG)")
+}
+
+record(ai, "$(APC):M$(SLOT)_CH$(CH)_SIG") {
+  field(DESC, "RTD Readback")
+  field(SCAN, "1 second")
+  field(DTYP, "Bx9000_KL3202")
+  field(INP, "@$(COUPLER):$(SLOT):R_ANA_IN_$(CH)")
+  field(PREC, "1")
+  field(HOPR, "500")
+  field(HIHI, "500")
+  field(HIGH, "500")
+  field(LOW,  "-100")
+  field(LOLO, "-100")
+  field(LOPR, "-100")
+  field(HYST, "$(HY)")
+  field(ADEL, "$(AD)")
+  field(MDEL, "$(MD)")
+  field(EGU, "DegC")
+  field(HHSV, "MAJOR")
+  field(LLSV, "MAJOR")
+  field(FLNK, "$(APC):M$(SLOT)_CH$(CH)_TEMP")
+  field(ASG, "$(ASG)")
+}
+

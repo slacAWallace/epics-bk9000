@@ -1,0 +1,30 @@
+# RELEASE
+# Defines location of external products
+include $(TOP)/RELEASE_SITE
+
+# ===============================================================
+# Define the location and version of EPICS base
+# ===============================================================
+BASE_MODULE_VERSION=R3.14.12-0.4.0
+EPICS_BASE=$(EPICS_SITE_TOP)/base/$(BASE_MODULE_VERSION)
+
+# ===============================================================
+# Define the version(s) of any other needed modules 
+# ===============================================================
+MODBUSTCPCLNT_MODULE_VERSION=R2.2.2-0.2.0
+
+# ============================================================
+# External Support module path definitions
+#
+# If any of these macros expand to a path which
+# contains an "include" directory, that directory will be
+# included in the compiler include path.
+#
+# If any of these macros expand to a path which
+# contains a "lib/<arch>" directory, that directory will be
+# included in the compiler link path for that architecture.
+#
+# If your build fails, look for these paths in your build output
+# ============================================================
+MODBUSTCPCLNT=$(EPICS_MODULES)/ModBusTCPClnt/$(MODBUSTCPCLNT_MODULE_VERSION)
+

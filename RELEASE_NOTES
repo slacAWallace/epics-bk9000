@@ -1,0 +1,154 @@
+#==============================================================
+#
+#  Name: RELEASE_NOTES
+#
+#  Rem: This files describes release notes for
+#       the Bx9000 MBT driver and device support.
+#
+#  Auth: dd-mmm-yyyy, Sheng Peng         (PENGS)
+#  Rev:  dd-mmm-yyyy, Reviewer's Name    (USERNAME)
+#--------------------------------------------------------------
+#  Mod:
+#        25-Jan-2012,S. Hoobler          (SONYA):
+#           release Bx9000_MBT-R2-5-0
+#        29-Dec-2011,A. Alarcon          (ALARCON):
+#           release Bx9000_MBT-R2-4-5
+#        21-Jul-2011, M. Boyes         (MBOYES):
+#           release Bx9000_MBT-R2-3-5
+#        19-Jul-2011, A. Alarcon         (ALARCON):
+#           release Bx9000_MBT-R2-3-4
+#        15-Mar-2011, A. Alarcon         (ALARCON):
+#           release Bx9000-R2-2-4
+#        11-Mar-2011, A. Alarcon         (ALARCON):
+#           release Bx9000-R2-2-3
+#        12-Jan-2011, S. Hoobler         (SONYA):
+#           release Bx9000-R2-2-2
+#	 07-Apr-2010, A. Chaiken 	 (ALISON):
+#	    release Bx9000-R2-2-1
+#        20-Mar-2010, S. Hoobler         (SONYA):
+#           release Bx9000-R2-2-0
+#        25-Jan-2010, M. Boyes/S. Hoobler (MBOYES):
+#           release Bx9000-R2-1-1
+#        29-Apr-2009, K. Luchini         (LUCHINI):
+#           release Bx9000-R2-0-0
+#==============================================================
+#
+Bx9000_MBT-R2-5-0:
+ Add support for KL3222
+ Add support for thermocouple and RTD signal averaging
+
+Bx9000_MBT-R2-3-5:
+ Fixed KL3162 conversion bug with proper 16 bit unsigned slope calcualtion.
+ Added KL3162 lcls database file, and display examples.
+
+Bx9000_MBT-R2-3-4:
+ Fixed KL3162 conversion bug
+
+Bx9000_MBT-R2-2-4:
+  Modified configure/RELEASE to work with eco, new version of ModBusTCPClnt
+  Also, add min/max macros to be comapatible with EPICS R3-14-11 and greater
+
+Bx9000_MBT-R2-2-3:  
+  Add support for KL2012 module:
+    New files: 
+               Bx9000_MBTApp/src/devKL2012.c
+               documentation/KL20x2.pdf
+    Mod files: 
+               Bx9000_MBTApp/src/Bx9000_BTDef.h, BX9000_MBT.dbd, 
+                                 Bx9000_MBT.dbd, Bx9000_SigDef.h, Makefile
+
+Bx9000_MBT-R2-2-2:  
+  Add support for KL1488 module:
+    New files: Bx9000_MBTApp/Db/KL1488.template, KL1488-lcls.template
+               Bx9000_MBTApp/src/devKL1488.c
+               documentation/KL14X8en.pdf
+    Mod files: README
+               Bx9000_MBTApp/Db/Makefile
+               Bx9000_MBTApp/src/Bx9000_BTDef.h, BX9000_MBT.dbd, 
+                                 Bx9000_MBT.dbd, Bx9000_SigDef.h, Makefile
+
+Bx9000_MBT-R2-2-1: Added support for KL3204, KL3162 and KL9020.
+	Tested against BK9050 and KL9050.
+	New database files: KL3204.template, KL3162.template
+	New driver files: devKL3162.c, devKL3204.c
+	Built with base-R3-14-8-2-lcls3.
+	Extensive additions to docs for BK9050, KL9050 and KL9020.
+
+Bx9000_MBT-R2-2-0: Built against rtems 4.9.4 and EPICS BASE:
+                   base-R3-14-8-2-lcls6
+
+Bx9000_MBT-R2-1-1:
+New database template and display files for lcls:
+  Bx9000_MBTApp/Db:
+    KL2408-lcls.template, KL3202-lcls.template, KL3314-lcls.template, KL3408-lcls.template,
+    analog-conversion-lcls.template
+  Bx9000_MBTApp/srcDisplay:
+    KL3202-RTD-lcls.edl, KL3314-TC-lcls.edl
+New analog conversion subroutine:
+  Bx9000_MBTApp/src:
+     analogSub.dbd, analogIn.c
+
+Bx9000_MBT-R2-1-0: Built against rtems 4.9.3 and EPICS BASE:
+                   base-R3-14-8-2-lcls5
+
+Bx9000_MBT-R2-0-0:
+Build with base-R3-14-8-2-lcls3 and rtems-4.9.1
+
+Bx9000_MBT-R1-2-7:
+Add RTD module KL3202 support.
+
+Bx9000_MBT-R1-2-6-2:
+Build with base-R3-14-8-2-lcls2 and ModBusTCPClnt-R1-1-0-2
+
+Bx9000_MBT-R1-2-6-1:
+modifications needed to bring the module to EPICS R3-14-9 standard
+Build with base-R3-14-9-lcls1 and rtems 4.7.1
+
+R1-2-6
+Please use blow command to get it:
+cvs co -P -d R1-2-6 -r R1-2-6 Bx9000_MBT
+
+R1-2-5 --> R1-2-6:
+Change term_r32_value from UINT32 to UINT16
+Modify version string
+
+R1-2-4 --> R1-2-5:
+Use better way to check RVAL range for AO record to avoid cut-off or wrap-around because of variable size
+
+R1-2-3 --> R1-2-4:
+Remove path to self
+Move test of vxWorks to SNS07 T2-2
+Fix typo which might prevent from writing to digital output
+Add pointer check for slot terminal type report
+
+R1-2-2 --> R1-2-3:
+Add support for KL3408
+
+R1-2-1 --> R1-2-2:
+Add support for KL3468
+
+R1-2-0 --> R1-2-1:
+Add extern "C"
+Add iocsh register function
+Build for both vxWorks and OSI
+Add soft IOC example
+Fix ID order issue for softIOC
+
+R1-1-9 --> R1-2-0:
+Remove unnecessary SEVERITY set when init output record
+
+
+R1-1-8 --> R1-1-9:
+Add re-process output on re-connect feature
+
+
+R1-1-7 --> R1-1-8:
+Add PINI macro to all output module templates
+
+
+R1-1-6 --> R1-1-7:
+Add support of KL9505, KL3064, KL4002 for Alan Justics
+Apply more accurate conversion to devKL4132.c
+
+
+

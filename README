@@ -1,0 +1,147 @@
+Bx9000_MBT is the EPICS driver and device support for Beckhoff Bx9000 and BK9050 couplers.
+Bx9000 so far could be BC9000/BK9000/BX9000.
+This driver talks to Bx9000 through ModBusTCP protocol. So you also need the
+module called ModBusTCPClnt.
+
+This driver and device support are OSI based, so your have to EPICS base 3.14
+or above to use it.
+
+Before using the Beckhoff controller, you must configure it for IP address.
+For DHCP server based configuration, set DIP switch 9 to OFF and DIP switch 10 to ON.
+
+Please follow the way described below to use this module:
+
+!!!!!!!!!!!!!!!!!!!!!!!!!! WARNING WARNING WARNING WARNING WARNING WARNING !!!!!!!!!!!!!!!!!!!!!!!!!
+There are watchdog timers in the Beckhoff. The driver will keep sending echo packets to Beckhoff
+@2Hz to make one watchdog timer happy to maintain TCP connection.
+Another watchdog timer will cause write failed then output turns to fail safe mode. 
+There are three solutions:
+1. Turn off this watchdog timer in Beckhoff KS2000 software:
+	a. Disable write-protection by going to Online / Coupler / Services / Write Protection Abolished.
+	b. Set Table 100, Register 24 to 0 (default 1000 ms) by going to Pos 0 (controller) / Tables / 100 / Offset 24
+2. If you have input modules installed with same coupler, you keep scanning then you are ok.
+3. If you have output modules only, then you have to make one output record scanned @ 10Hz
+!!!!!!!!!!!!!!!!!!!!!!!!!! WARNING WARNING WARNING WARNING WARNING WARNING !!!!!!!!!!!!!!!!!!!!!!!!!
+
+1. Add the following lines into your configure/RELEASE
+	MODBUSTCPCLNT=$(EPICS_MODULES)/ModBusTCPClnt/$(MODBUSTCPCLNT_MODULE_VERSION)
+	BX9000_MBT=$(EPICS_MODULES)/Bx9000_MBT/$(BX9000_MBT_MODULE_VERSION)
+
+2.	Add the following lines to your XXXApp/src/Makefile
+	XXX_DBD  += Bx9000_MBT.dbd
+	XXX_LIBS += Bx9000_MBT
+	XXX_LIBS += ModBusTCPClnt
+
+3.	Copy the following files to your XXXApp/Db directory
+	and customize them to match your needs
+	Bx9000.substitutions
+# For a KL3314 module (substitute modules as needed)
+	KL3314.substitutions
+
+4.	Add the following lines to your XXXApp/Db/Makefile
+	EPICS will create these files from your substitutions files.
+	DB += Bx9000.db
+# For a KL3314 module (substitute modules as needed)
+	DB += KL3314.db
+
+5a. For VxWorks, add the following lines into your st.cmd (see 6b for EPICS)
+	# Disclaimer: This is from prior version of README and is vxWorks specific,
+	# however, I have not tested this on vxWorks.
+
+	# ------------------------------------------------------------------------
+	# ---------  Load ModBusTCPClnt + Bx9000_MBT Library ---------------------
+	# ------------------------------------------------------------------------
+	cd modbustcpclntbin
+	ld < ModBusTCPClntLib.munch
+
+	cd modbustcpclnt
+	dbLoadDatabase("dbd/ModBusTCPClnt.dbd",0,0)
+	ModBusTCPClnt_registerRecordDeviceDriver(pdbbase)
+
+	cd bx9000_mbtbin
+	ld < Bx9000_MBTLib.munch
+
+	cd bx9000_mbt
+	dbLoadDatabase("dbd/Bx9000_MBT.dbd",0,0)
+	Bx9000_MBT_registerRecordDeviceDriver(pdbbase)
+
+	......
+
+	# Add coupler
+	# Bx9000_Coupler_Add( UINT8 * cplrname, UINT8 * ipaddr, UINT8 * init_string)
+	# Substitute your COUPLER hostname for ics-test-bh3
+	Bx9000_Coupler_Add("ics-test-bh3","160.91.229.182",0)
+	# Add terminals to the coupler
+	# Bx9000_Terminal_Add( UINT8 * cplrname, UINT16 slot, UINT8 * btname, UINT8 * init_string)
+	Bx9000_Terminal_Add("ics-test-bh3", 1, "KL4002", 0)
+	Bx9000_Terminal_Add("ics-test-bh3", 2, "KL3468", 0)
+	Bx9000_Terminal_Add("ics-test-bh3", 3, "KL3408", 0)
+	Bx9000_Terminal_Add("ics-test-bh3", 4, "KL2408", 0)
+	Bx9000_Terminal_Add("ics-test-bh3", 5, "KL1104", 0)
+	# ...
+
+	# Be sure to finish with a KL9010!
+	Bx9000_Terminal_Add("ics-test-bh3", 16, "KL9010", 0)
+
+	......
+
+	# Substitute your COUPLER hostname and COUPLER_LOC EPICS prefix
+	dbLoadRecords("db/beckhoff-ics-test-ioc1.db", "COUPLER=ics-test-bh3,COUPLER_LOC=AMO:R01:BHC:07")
+
+5b. For EPICS, add the following lines into your st.cmd (see 6a for VxWorks)
+	# Add coupler
+	# Bx9000_Coupler_Add( UINT8 * cplrname, UINT8 * ipaddr, UINT8 * init_string)
+	# Substitute your COUPLER hostname for ics-test-bh3
+	Bx9000_Coupler_Add("ics-test-bh3","160.91.229.182",0)
+
+	# Add terminals to the coupler
+	# Bx9000_Terminal_Add( UINT8 * cplrname, UINT16 slot, UINT8 * btname, UINT8 * init_string)
+	Bx9000_Terminal_Add("ics-test-bh3", 1, "KL9505", 0)
+	Bx9000_Terminal_Add("ics-test-bh3", 2, "KL3314", 0)
+	Bx9000_Terminal_Add("ics-test-bh3", 3, "KL3312", 0)
+	# ...
+
+	# Be sure to finish with a KL9010!
+	Bx9000_Terminal_Add("ics-test-bh3", 16, "KL9010", 0)
+
+	......
+
+	# Substitute your COUPLER hostname and COUPLER_LOC EPICS prefix
+	dbLoadRecords("db/Bx9000.db", "COUPLER=ics-test-bh3,COUPLER_LOC=AMO:R01:BHC:07")
+	dbLoadRecords("db/KL3314.db", "COUPLER=ics-test-bh3,COUPLER_LOC=AMO:R01:BHC:07")
+	dbLoadRecords("db/KL3064.db", "COUPLER=ics-test-bh3,COUPLER_LOC=AMO:R01:BHC:07")
+	...
+
+IN THE CASE OF THE KL9020 AND KL9050 BUS COUPLERS:
+
+        Bx9000_Coupler_Add("bkhf-b34-cd02","134.79.219.106",0)
+	Bx9000_Terminal_Add("bkhf-b34-cd02", 1, "KL3408", 0)
+	Bx9000_Terminal_Add("bkhf-b34-cd02", 2, "KL9020", 0)
+	Bx9000_Terminal_Add("bkhf-b34-cd02", 3, "KL3204", 0)
+	Bx9000_Terminal_Add("bkhf-b34-cd02", 4, "KL9010", 0)
+
+Note that there is no Bx9000_Terminal_Add entry for KL9050.  See
+documentation/BeckhoffExtendedExample.png and
+documentation/BeckhoffTopology.png for more info.
+
+6. There is no screen built for each terminal in SHARE area,
+   you should build your own one according to your application.
+   But we do have two screens in SHARE area,
+   they show the Bx9000 coupler status and installed bus terminals.
+   You can run them like this, substituting your COUPLER_LOC EPICS name
+	edm -x -m "COUPLER_LOC=AMO:R01:BHC:07" Bx9000Info.edl
+	edm -x -m "COUPLER_LOC=AMO:R01:BHC:07" Bx9000InstalledBTs.edl
+   Bx9000Info.edl shows the coupler connections' status and some other info.
+   Bx9000InstalledBTs.edl shows the installed bus terminals on slot 0~16,
+   if you need more, you should build your own one.
+
+7. Optional signal averaging has been added for RTD and thermocouple signals,
+   KL3314, KL3202, KL3222. Averaging is done in record processing. Two new 
+   macros are used to configure this as follows:
+     If no averaging is desired,
+       set $(NSAM) to "1"
+       set $(SCAN) to "1 second"
+     If averaging is desired,
+       set $(NSAM) to number of samples to average
+       set $(SCAN) to rate to poll Beckhoff at (high-level PVs still update at 1 Hz)
+   This is also described in Bx9000_MBTApp/Db/KL****-lcls.template 

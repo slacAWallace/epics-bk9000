@@ -1,0 +1,29 @@
+# KL3404 is a 4-ch 12 bit analog input module
+
+record(ai, "$(SIG)")
+{
+  field(DESC, "$(SIG.DESC=Signal Description)")
+  field(SCAN, "$(SIG.SCAN)")
+  field(DTYP, "Bx9000_KL3404")
+  field(INP,  "@$(COUPLER):$(SLOT):R_ANA_IN_$(CH)")
+  field(PREC, "$(SIG.PREC=3)")
+  field(ADEL, "$(SIG.ADEL=0.01)")
+  field(EGUF, "$(SIG.EGUF=10)")
+  field(EGUL, "$(SIG.EGUL=-10)")
+  field(HIGH, "$(SIG.HIGH=0)")
+  field(HIHI, "$(SIG.HIHI=0)")
+  field(HOPR, "$(SIG.HOPR=10)")
+  field(HYST, "$(SIG.HYST=0)")
+  field(LOLO, "$(SIG.LOLO=0)")
+  field(LOPR, "$(SIG.LOPR=-10)")
+  field(LOW,  "$(SIG.LOW=0)")
+  field(MDEL, "$(SIG.MDEL=0)")
+  field(SMOO, "$(SIG.SMOO=0)")
+  field(EGU,  "$(SIG.EGU=V)")
+  field(HHSV, "$(SIG.HHSV=NO_ALARM)")
+  field(LLSV, "$(SIG.LLSV=NO_ALARM)")
+  field(HSV,  "$(SIG.HSV=NO_ALARM)")
+  field(LSV,  "$(SIG.LSV=NO_ALARM)")
+  field(LINR, "$(SIG.LINR=LINEAR)")
+}
+

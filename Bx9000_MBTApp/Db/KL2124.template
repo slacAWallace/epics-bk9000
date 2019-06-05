@@ -1,0 +1,54 @@
+record(bo, "$(SIG1)")
+{
+  field(DESC, "$(SIG1.DESC)")
+  field(DTYP, "Bx9000_KL2124")
+  field(OUT,  "@$(COUPLER):$(SLOT):W_DIG_OUT_1")
+  field(ZNAM, "$(SIG1.ZNAM)")
+  field(ONAM, "$(SIG1.ONAM)")
+  field(PINI, "$(SIG1.PINI)")
+}
+
+record(bo, "$(SIG2)")
+{
+  field(DESC, "$(SIG2.DESC)")
+  field(DTYP, "Bx9000_KL2124")
+  field(OUT,  "@$(COUPLER):$(SLOT):W_DIG_OUT_2")
+  field(ZNAM, "$(SIG2.ZNAM)")
+  field(ONAM, "$(SIG2.ONAM)")
+  field(PINI, "$(SIG2.PINI)")
+}
+
+record(bo, "$(SIG3)")
+{
+  field(DESC, "$(SIG3.DESC)")
+  field(DTYP, "Bx9000_KL2124")
+  field(OUT,  "@$(COUPLER):$(SLOT):W_DIG_OUT_3")
+  field(ZNAM, "$(SIG3.ZNAM)")
+  field(ONAM, "$(SIG3.ONAM)")
+  field(PINI, "$(SIG3.PINI)")
+}
+
+record(bo, "$(SIG4)")
+{
+  field(DESC, "$(SIG4.DESC)")
+  field(DTYP, "Bx9000_KL2124")
+  field(OUT,  "@$(COUPLER):$(SLOT):W_DIG_OUT_4")
+  field(ZNAM, "$(SIG4.ZNAM)")
+  field(ONAM, "$(SIG4.ONAM)")
+  field(PINI, "$(SIG4.PINI)")
+}
+
+# We put SIG1 macro in the name just to avoid name overlaping
+record(fanout, "$(SIG1)ReProc")
+{
+  field(DESC, "FANOUT Reproc")
+  field(SCAN, "Event")
+  field(EVNT, "$(REPROCEVT)")
+  field(SELM, "All")
+  field(LNK1, "$(SIG1)")
+  field(LNK2, "$(SIG2)")
+  field(LNK3, "$(SIG3)")
+  field(LNK4, "$(SIG4)")
+  field(PINI, "NO")
+}
+

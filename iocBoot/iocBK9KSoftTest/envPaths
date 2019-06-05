@@ -1,0 +1,7 @@
+epicsEnvSet("ARCH","linux-x86")
+epicsEnvSet("IOC","iocBK9KSoftTest")
+epicsEnvSet("TOP","/reg/g/pcds/package/epics/3.14-dev/modules/Bx9000_MBT/current")
+epicsEnvSet("EPICS_SITE_TOP","/reg/g/pcds/package/epics/3.14")
+epicsEnvSet("EPICS_MODULES","/reg/g/pcds/package/epics/3.14/modules")
+epicsEnvSet("EPICS_BASE","/reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0")
+epicsEnvSet("MODBUSTCPCLNT","/reg/g/pcds/package/epics/3.14/modules/ModBusTCPClnt/R2.2.2-0.2.0")

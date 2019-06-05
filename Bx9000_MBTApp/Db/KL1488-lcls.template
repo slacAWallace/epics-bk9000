@@ -1,0 +1,21 @@
+record(bi, "$(APC):M$(SLOT)_CH$(CH)_SIG") {
+  field(DESC, "Digital Channel $(CH) Readback")
+#Need to scan faster than 1 Hz to avoid bad watchdog state?
+  field(SCAN, ".1 second")
+  field(DTYP, "Bx9000_KL1488")
+  field(INP,  "@$(COUPLER):$(SLOT):R_DIG_IN_$(CH)")
+  field(ZNAM, "$(ZNAM)")
+  field(ONAM, "$(ONAM)")
+  field(FLNK, "$(ALIAS)")
+}
+
+record(bi, "$(ALIAS)") {
+  field(DESC, "$(D)")
+  field(INP, "$(APC):M$(SLOT)_CH$(CH)_SIG")
+  field(ZNAM, "$(ZNAM)")
+  field(ONAM, "$(ONAM)")
+  field(ZSV,  "$(ZSV)")
+  field(OSV,  "$(OSV)")
+  field(COSV, "$(COSV)")
+}
+

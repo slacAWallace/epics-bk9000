@@ -1,0 +1,29 @@
+# to be used with analog-conversion-lcls.template
+record(ai, "$(APC):M$(SLOT)_CH$(CH)_SIG") {
+  field(DESC, "Analog Ch$(CH) Readback")
+  field(SCAN, "1 second")
+  field(DTYP, "Bx9000_KL3162")
+  field(INP,  "@$(COUPLER):$(SLOT):R_ANA_IN_$(CH)")
+  field(PREC, "$(PREC)")
+  field(ADEL, "$(ADEL)")
+  field(EGUF, "$(EGUF)")
+  field(EGUL, "$(EGUL)")
+  field(HIGH, "$(HIGH)")
+  field(HIHI, "$(HIHI)")
+  field(HOPR, "$(HOPR)")
+  field(HYST, "$(HYST)")
+  field(LOLO, "$(LOLO)")
+  field(LOPR, "$(LOPR)")
+  field(LOW,  "$(LOW)")
+  field(MDEL, "$(MDEL)")
+#  field(SMOO, "$(SMOO)")
+  field(EGU,  "V")
+  field(HHSV, "MAJOR")
+  field(LLSV, "MAJOR")
+  field(HSV,  "MINOR")
+  field(LSV,  "MINOR")
+  field(LINR, "LINEAR")
+  field(FLNK, "$(APC):M$(SLOT)_CH$(CH)_EGU")
+}
+
+

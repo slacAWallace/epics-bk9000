@@ -1,0 +1,7 @@
+# Archive Beckhoff Bx9000 Controller PV list
+$(COUPLER_LOC):CplrReady		1	monitor
+$(COUPLER_LOC):CplrLinkStat		1	monitor
+$(COUPLER_LOC):CplrName			30
+$(COUPLER_LOC):CplrTLostConn	10
+$(COUPLER_LOC):CplrTSetConn		10
+$(COUPLER_LOC):CplrTLastTry		10

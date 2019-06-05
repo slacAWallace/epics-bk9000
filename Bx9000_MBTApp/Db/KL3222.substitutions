@@ -1,0 +1,40 @@
+#==============================================================================
+#
+# Abs:  Beckhoff KL3222 2 Ch RTD
+#
+# Name: KL3222.substitutions
+#
+# Auth: 10-oct-2010, Ravi Mirakhur			(rmirakhu)
+# Rev : 3-Nov-2011, Garth Brown		(gwbrown) Changed macros to match the template file
+#
+#==============================================================================
+#
+
+file KL3222.template
+{
+	pattern
+	{	SLOT,
+		SIG1, SIG1.DESC,
+			SIG1.HOPR,	SIG1.HIHI,	SIG1.HIGH,
+			SIG1.LOW,	SIG1.LOLO,	SIG1.LOPR,
+			SIG1.HYST,	SIG1.ADEL,	SIG1.MDEL,
+			SIG1.SMOO,	SIG1.SCAN,	
+		SIG2, SIG2.DESC,
+			SIG2.HOPR,	SIG2.HIHI,	SIG2.HIGH,
+			SIG2.LOW,	SIG2.LOLO,	SIG2.LOPR,
+			SIG2.HYST,	SIG2.ADEL,	SIG2.MDEL,
+			SIG2.SMOO,	SIG2.SCAN
+	}
+	{	2,
+		$(COUPLER_LOC):KL3222:SLOT$(SLOT):TEMP1, "Temperature 1",
+			850,		60,			55,
+			0,			0,			-250,
+			1,			1,			0.1,
+			0,			"1 second",	
+		$(COUPLER_LOC):KL3222:SLOT$(SLOT):TEMP2, "Temperature 2",
+			850,		60,		55,
+			0,			0,			-250,
+			1,			1,			0.1,
+			0,			"1 second"
+	}
+}

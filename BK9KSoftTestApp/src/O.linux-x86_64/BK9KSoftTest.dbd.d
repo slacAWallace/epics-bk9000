@@ -1,0 +1,51 @@
+# DO NOT EDIT: This file created by mkmf.pl,v 1.5 2002/03/25 21:33:24 jba Exp $ 
+
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/base.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/modules/ModBusTCPClnt/R2.2.2-0.2.0/dbd/ModBusTCPClnt.dbd
+../O.Common/BK9KSoftTest.dbd : ../../../dbd/Bx9000_MBT.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/menuGlobal.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/menuConvert.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/aaiRecord.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/aaoRecord.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/aiRecord.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/aoRecord.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/aSubRecord.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/biRecord.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/boRecord.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/calcRecord.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/calcoutRecord.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/compressRecord.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/dfanoutRecord.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/eventRecord.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/fanoutRecord.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/longinRecord.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/longoutRecord.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/mbbiRecord.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/mbbiDirectRecord.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/mbboRecord.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/mbboDirectRecord.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/permissiveRecord.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/selRecord.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/seqRecord.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/stateRecord.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/stringinRecord.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/stringoutRecord.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/subRecord.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/subArrayRecord.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/waveformRecord.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/devSoft.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/menuAlarmSevr.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/menuAlarmStat.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/menuCompress.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/menuFtype.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/menuIvoa.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/menuOmsl.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/menuPini.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/menuPriority.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/menuScan.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/menuSimm.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/menuYesNo.dbd
+../O.Common/BK9KSoftTest.dbd : /reg/g/pcds/package/epics/3.14/base/R3.14.12-0.4.0/dbd/dbCommon.dbd
+
+
+../O.Common/BK9KSoftTest.dbd : ../Makefile

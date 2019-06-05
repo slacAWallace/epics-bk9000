@@ -1,0 +1,34 @@
+ record(bo, "$(ALIAS)") {
+   field(DESC, "$(D)")
+   field(OMSL, "supervisory")
+   field(ZNAM, "$(ZNAM)")
+   field(ONAM, "$(ONAM)")
+   field(ZSV,  "$(ZSV)")
+   field(OSV,  "$(OSV)")
+   field(FLNK, "$(APC):M$(SLOT)_CH$(CH)_SIG")
+   field(VAL,  "0")
+   field(PINI, "YES")
+   field(HIGH, "$(HIGH)")
+ }
+
+ record(bo, "$(APC):M$(SLOT)_CH$(CH)_SIG") {
+   field(DESC, "Digital Channel $(CH) Set")
+   field(DTYP, "Bx9000_KL2408")
+   field(OUT,  "@$(COUPLER):$(SLOT):W_DIG_OUT_$(CH)")
+   field(DOL, "$(ALIAS)")
+   field(OMSL, "closed_loop")
+   field(ZNAM, "$(ZNAM)")
+   field(ONAM, "$(ONAM)")
+}
+
+# These BCS outputs are only initiated by user. Do not 
+# want to process on reconnect.
+#record(fanout, "$(APC):M$(SLOT)_CH$(CH)_OUT_REPROC") {
+#  field(DESC, "Process on reconnect")
+#  field(SCAN, "Event")
+#  field(EVNT, "$(REPROCEVT)")
+#  field(SELM, "All")
+#  field(LNK1, "$(APC):M$(SLOT)_CH$(CH)_IN")
+#  field(PINI, "NO")
+#}
+

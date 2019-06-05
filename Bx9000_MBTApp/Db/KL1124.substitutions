@@ -1,0 +1,27 @@
+file KL1124.template
+{
+	pattern
+	{	SLOT,
+		SIG1, 		SIG1.DESC,
+		SIG1.ZNAM,	SIG1.ONAM,	SIG1.ZSV,	SIG1.OSV,	SIG1.COSV,	SIG1.SCAN,
+		SIG2, 		SIG2.DESC,
+		SIG2.ZNAM,	SIG2.ONAM,	SIG2.ZSV,	SIG2.OSV,	SIG2.COSV,	SIG2.SCAN,
+		SIG3, 		SIG3.DESC,
+		SIG3.ZNAM,	SIG3.ONAM,	SIG3.ZSV,	SIG3.OSV,	SIG3.COSV,	SIG3.SCAN,
+		SIG4, 		SIG4.DESC,
+		SIG4.ZNAM,	SIG4.ONAM,	SIG4.ZSV,	SIG4.OSV,	SIG4.COSV,	SIG4.SCAN
+	}
+#	Include one instance of the pattern for each instance
+#	of this module, substituting the appropriate slot number
+#	and signal attributes
+	{	11,
+		$(COUPLER_LOC):KL1124:SLOT$(SLOT):DIN1,	"Signal 1 Description",
+		Off,	On,		NO_ALARM,	NO_ALARM,	NO_ALARM,	".1 second",
+		$(COUPLER_LOC):KL1124:SLOT$(SLOT):DIN2,	"Signal 2 Description",
+		Off,	On,		NO_ALARM,	NO_ALARM,	NO_ALARM,	".1 second",
+		$(COUPLER_LOC):KL1124:SLOT$(SLOT):DIN3,	"Signal 3 Description",
+		Off,	On,		NO_ALARM,	NO_ALARM,	NO_ALARM,	".1 second",
+		$(COUPLER_LOC):KL1124:SLOT$(SLOT):DIN4,	"Signal 4 Description",
+		Off,	On,		NO_ALARM,	NO_ALARM,	NO_ALARM,	".1 second",
+	}
+}

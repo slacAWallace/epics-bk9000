@@ -1,0 +1,66 @@
+#==============================================================================
+#
+# Abs:  Beckhoff KL3314 4 Ch Thermocouple
+#
+# Name: KL3314.substitutions
+#
+# Auth: 22-May-2009, Bruce Hill			(bhill)
+# Rev : dd-mmm-yyyy, Reviewer's Name	(USERNAME)
+#
+#==============================================================================
+#
+
+file KL3314.template
+{
+	pattern
+	{	SLOT,	
+		SIG1, SIG1.DESC,
+			SIG1.HOPR,	SIG1.HIHI,	SIG1.HIGH,
+			SIG1.LOW,	SIG1.LOLO,	SIG1.LOPR,
+			SIG1.HYST,	SIG1.ADEL,	SIG1.MDEL,
+			SIG1.SMOO,	SIG1.SCAN,	
+		SIG2, SIG2.DESC,
+			SIG2.HOPR,	SIG2.HIHI,	SIG2.HIGH,
+			SIG2.LOW,	SIG2.LOLO,	SIG2.LOPR,
+			SIG2.HYST,	SIG2.ADEL,	SIG2.MDEL,
+			SIG2.SMOO,	SIG2.SCAN,	
+		SIG3, SIG3.DESC,
+			SIG3.HOPR,	SIG3.HIHI,	SIG3.HIGH,
+			SIG3.LOW,	SIG3.LOLO,	SIG3.LOPR,
+			SIG3.HYST,	SIG3.ADEL,	SIG3.MDEL,
+			SIG3.SMOO,	SIG3.SCAN,	
+		SIG4, SIG4.DESC,
+			SIG4.HOPR,	SIG4.HIHI,	SIG4.HIGH,
+			SIG4.LOW,	SIG4.LOLO,	SIG4.LOPR,
+			SIG4.HYST,	SIG4.ADEL,	SIG4.MDEL,
+			SIG4.SMOO,	SIG4.SCAN
+	}
+#	Include one instance of the pattern for each instance
+#	of this module, substituting the appropriate slot number
+#	and signal attributes
+	{	2,	
+		$(COUPLER_LOC):KL3314:SLOT$(SLOT):TEMP1, "Temperature 1",
+			150,		120,		100,
+			40,			20,			0,
+			0,			.2,			0,
+			0,			"1 second",	
+		$(COUPLER_LOC):KL3314:SLOT$(SLOT):TEMP2, "Temperature 2",
+			150,		120,		100,
+			40,			20,			0,
+			0,			.2,			0,
+			0,			"1 second",	
+		$(COUPLER_LOC):KL3314:SLOT$(SLOT):TEMP3, "Temperature 3",
+			150,		120,		100,
+			40,			20,			0,
+			0,			.2,			0,
+			0,			"1 second",	
+		$(COUPLER_LOC):KL3314:SLOT$(SLOT):TEMP4, "Temperature 4",
+			150,		120,		100,
+			40,			20,			0,
+			0,			.2,			0,
+			0,			"1 second",	
+	}
+}
+
+
+

@@ -1,0 +1,23 @@
+file KL4132.template
+{
+	pattern
+	{	SLOT,		REPROCEVT,
+		SIG1,		SIG1.DESC,
+			SIG1.UNIT,	SIG1.EGUF,	SIG1.EGUL,
+			SIG1.HOPR,	SIG1.LOPR,	SIG1.DRVH,	SIG1.DRVL,	SIG1.PINI,
+		SIG2,		SIG2.DESC,
+			SIG2.UNIT,	SIG2.EGUF,	SIG2.EGUL,
+			SIG2.HOPR,	SIG2.LOPR,	SIG2.DRVH,	SIG2.DRVL,	SIG2.PINI,
+	}
+#	Include one instance of the pattern for each instance
+#	of this module, substituting the appropriate slot number
+#	and signal attributes
+	{	9,			188,
+		$(COUPLER_LOC):KL4132:SLOT$(SLOT):AOUT1, "Signal 1 Description",
+			Volt,		10,			-10,
+			10,			-10,		10,			-10,			NO,
+		$(COUPLER_LOC):KL4132:SLOT$(SLOT):AOUT2, "Signal 2 Description",
+			Volt,		10,			-10,
+			10,			-10,		10,			-10,			NO,
+	}
+}

@@ -1,0 +1,106 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 2287
+y 254
+w 75
+h 140
+font "helvetica-medium-r-18.0"
+ctlFont "helvetica-medium-r-18.0"
+btnFont "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 7
+textColor index 14
+ctlFgColor1 index 14
+ctlFgColor2 index 0
+ctlBgColor1 index 0
+ctlBgColor2 index 14
+topShadowColor index 0
+botShadowColor index 14
+showGrid
+endScreenProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 3
+y 3
+w 31
+h 110
+fgColor index 14
+bgColor index 4
+topShadowColor index 14
+botShadowColor index 11
+font "helvetica-medium-r-10.0"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "KL3162.edl"
+}
+setPosition {
+  0 "parentWindow"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 10
+y 7
+w 22
+h 12
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 4
+useDisplayBg
+value {
+  "$(m)"
+}
+autoSize
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 15
+y 38
+w 8
+h 8
+lineColor index 14
+fill
+fillColor index 16
+fillAlarm
+alarmPv "$(apc):M$(m)_CH1_SIG"
+visInvert
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 15
+y 74
+w 8
+h 8
+lineColor index 14
+fill
+fillColor index 16
+fillAlarm
+alarmPv "$(apc):M$(m)_CH2_SIG"
+visInvert
+endObjectProperties
+

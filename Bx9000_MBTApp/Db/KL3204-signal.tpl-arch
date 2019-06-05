@@ -1,0 +1,17 @@
+# Archive Beckhoff KL3204 Analog Input Signal PV list
+$(SIG).VAL		1
+$(SIG).ADEL		30
+$(SIG).DESC		30
+$(SIG).EGU		30
+$(SIG).EGUF		30
+$(SIG).EGUL		30
+$(SIG).HHSV		30
+$(SIG).HOPR		30
+$(SIG).HSV		30
+$(SIG).HYST		30
+$(SIG).LLSV		30
+$(SIG).LOPR		30
+$(SIG).LSV		30
+$(SIG).MDEL		30
+$(SIG).PREC		30
+$(SIG).SMOO		30

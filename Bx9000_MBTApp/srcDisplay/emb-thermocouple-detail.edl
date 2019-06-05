@@ -1,0 +1,496 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 790
+y 549
+w 314
+h 280
+font "helvetica-medium-r-12.0"
+ctlFont "helvetica-medium-r-12.0"
+ctlFontAlign "center"
+btnFont "helvetica-medium-r-14.0"
+btnFontAlign "center"
+fgColor index 14
+bgColor index 3
+textColor index 14
+ctlFgColor1 index 25
+ctlFgColor2 index 15
+ctlBgColor1 index 5
+ctlBgColor2 index 15
+topShadowColor index 1
+botShadowColor index 14
+title "emb-thermocouple-detail"
+showGrid
+snapToGrid
+gridSize 4
+endScreenProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 4
+y 4
+w 240
+h 20
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "$(TC)"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 4
+y 32
+w 240
+h 20
+controlPv "$(TC).DESC"
+font "helvetica-medium-r-12.0"
+fgColor index 26
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 1
+smartRefresh
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 4
+y 56
+w 240
+h 20
+
+beginGroup
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 176
+y 56
+w 68
+h 20
+controlPv "$(TC)"
+font "helvetica-bold-r-14.0"
+fontAlign "center"
+fgColor index 16
+fgAlarm
+bgColor index 12
+motifWidget
+limitsFromDb
+nullColor index 0
+smartRefresh
+useHexPrefix
+showUnits
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 4
+y 56
+w 160
+h 20
+font "helvetica-bold-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 1
+useDisplayBg
+value {
+  "Current Temp"
+}
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 4
+y 80
+w 240
+h 20
+
+beginGroup
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 176
+y 80
+w 68
+h 20
+controlPv "$(TC).HIHI"
+font "helvetica-medium-r-12.0"
+fgColor index 26
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 0
+smartRefresh
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 4
+y 80
+w 160
+h 20
+font "helvetica-bold-r-12.0"
+fontAlign "right"
+fgColor index 21
+bgColor index 1
+useDisplayBg
+value {
+  "Major Alarm High Limit"
+}
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 4
+y 109
+w 240
+h 20
+
+beginGroup
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 176
+y 109
+w 68
+h 20
+controlPv "$(TC).HIGH"
+font "helvetica-medium-r-12.0"
+fgColor index 26
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 0
+smartRefresh
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 4
+y 109
+w 160
+h 20
+font "helvetica-bold-r-12.0"
+fontAlign "right"
+fgColor index 35
+bgColor index 1
+useDisplayBg
+value {
+  "Minor Alarm High Limit"
+}
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 4
+y 138
+w 240
+h 20
+
+beginGroup
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 176
+y 138
+w 68
+h 20
+controlPv "$(TC).LOW"
+font "helvetica-medium-r-12.0"
+fgColor index 26
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 0
+smartRefresh
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 4
+y 138
+w 160
+h 20
+font "helvetica-bold-r-12.0"
+fontAlign "right"
+fgColor index 35
+bgColor index 1
+useDisplayBg
+value {
+  "Minor Alarm Low Limit"
+}
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 4
+y 167
+w 240
+h 20
+
+beginGroup
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 176
+y 167
+w 68
+h 20
+controlPv "$(TC).LOLO"
+font "helvetica-medium-r-12.0"
+fgColor index 26
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 0
+smartRefresh
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 4
+y 167
+w 160
+h 20
+font "helvetica-bold-r-12.0"
+fontAlign "right"
+fgColor index 21
+bgColor index 1
+useDisplayBg
+value {
+  "Major Alarm Low Limit"
+}
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 4
+y 196
+w 240
+h 20
+
+beginGroup
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 176
+y 196
+w 68
+h 20
+controlPv "$(TC).ADEL"
+font "helvetica-medium-r-12.0"
+fgColor index 26
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 0
+smartRefresh
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 4
+y 196
+w 160
+h 20
+font "helvetica-bold-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 1
+useDisplayBg
+value {
+  "Archive Deadband"
+}
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 4
+y 222
+w 240
+h 20
+
+beginGroup
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 176
+y 222
+w 68
+h 20
+controlPv "$(TC).MDEL"
+font "helvetica-medium-r-12.0"
+fgColor index 26
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 0
+smartRefresh
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 4
+y 222
+w 160
+h 20
+font "helvetica-bold-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 1
+useDisplayBg
+value {
+  "Monitor Deadband"
+}
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+

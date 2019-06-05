@@ -1,0 +1,929 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 613
+y 162
+w 620
+h 450
+font "helvetica-bold-i-18.0"
+fontAlign "center"
+ctlFont "courier-bold-r-14.0"
+ctlFontAlign "right"
+btnFont "courier-medium-r-8.0"
+fgColor index 14
+bgColor index 8
+textColor index 10
+ctlFgColor1 index 25
+ctlFgColor2 index 30
+ctlBgColor1 index 5
+ctlBgColor2 index 10
+topShadowColor index 5
+botShadowColor index 10
+title "Temperature - Beckhoff BX9000 Coupler Diagnostic"
+showGrid
+snapToGrid
+pvType "EPICS"
+endScreenProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 10
+y 80
+w 600
+h 350
+lineColor index 3
+fill
+fillColor index 3
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 80
+y 140
+w 410
+h 60
+lineColor index 29
+fillColor index 5
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 0
+y 0
+w 620
+h 40
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 56
+value {
+  "Beckhoff Bx9000 Diagnostic"
+  "Coupler $(apc)    $(apc):LOCATION"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 10
+y 60
+w 170
+h 20
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 3
+value {
+  "Bx9000 Test & Maintenance"
+}
+endObjectProperties
+
+# (RegTextupdate)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 20
+y 110
+w 150
+h 20
+controlPv "$(apc):CPLRNAME"
+fgColor index 14
+fgAlarm
+bgColor index 6
+fill
+font "courier-medium-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 20
+y 90
+w 80
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 5
+useDisplayBg
+value {
+  "Coupler Name"
+}
+autoSize
+endObjectProperties
+
+# (RegTextupdate)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 190
+y 110
+w 150
+h 20
+controlPv "$(apc):CPLRIPADDR"
+fgColor index 14
+fgAlarm
+bgColor index 6
+fill
+font "courier-medium-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 190
+y 90
+w 109
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 5
+useDisplayBg
+value {
+  "Coupler IP Address"
+}
+autoSize
+endObjectProperties
+
+# (Exit Button)
+object activeExitButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 550
+y 10
+w 48
+h 24
+fgColor index 14
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+label "Exit"
+font "helvetica-medium-r-12.0"
+3d
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 360
+y 90
+w 60
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 5
+useDisplayBg
+value {
+  "Coupler ID"
+}
+autoSize
+endObjectProperties
+
+# (RegTextupdate)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 360
+y 110
+w 150
+h 20
+controlPv "$(apc):CPLRID"
+fgColor index 14
+fgAlarm
+bgColor index 6
+fill
+font "courier-medium-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 10
+y 210
+w 120
+h 20
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 5
+useDisplayBg
+value {
+  "Complex Out Words"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 10
+y 240
+w 120
+h 20
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 5
+useDisplayBg
+value {
+  "Complex In Words"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 10
+y 270
+w 120
+h 20
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 5
+useDisplayBg
+value {
+  "Digital In Bits"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 10
+y 300
+w 120
+h 20
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 5
+useDisplayBg
+value {
+  "Digital Out Bits"
+}
+endObjectProperties
+
+# (RegTextupdate)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 140
+y 210
+w 150
+h 20
+controlPv "$(apc):CPLRCOUTWDS"
+fgColor index 14
+fgAlarm
+bgColor index 6
+fill
+font "courier-medium-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (RegTextupdate)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 140
+y 240
+w 150
+h 20
+controlPv "$(apc):CPLRCINWDS"
+fgColor index 14
+fgAlarm
+bgColor index 6
+fill
+font "courier-medium-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (RegTextupdate)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 140
+y 300
+w 150
+h 20
+controlPv "$(apc):CPLRDINBITS"
+fgColor index 14
+fgAlarm
+bgColor index 6
+fill
+font "courier-medium-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (RegTextupdate)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 140
+y 270
+w 150
+h 20
+controlPv "$(apc):CPLRDOUTBITS"
+fgColor index 14
+fgAlarm
+bgColor index 6
+fill
+font "courier-medium-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (RegTextupdate)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 450
+y 240
+w 150
+h 20
+controlPv "$(apc):CPLROPTHRDNAME"
+fgColor index 14
+fgAlarm
+bgColor index 6
+fill
+font "courier-medium-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 320
+y 240
+w 120
+h 20
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 5
+useDisplayBg
+value {
+  "Op Thread ID"
+}
+endObjectProperties
+
+# (RegTextupdate)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 450
+y 210
+w 150
+h 20
+controlPv "$(apc):CPLROPTHRDNAME"
+fgColor index 14
+fgAlarm
+bgColor index 6
+fill
+font "courier-medium-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 320
+y 210
+w 120
+h 20
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 5
+useDisplayBg
+value {
+  "Op Thread Name"
+}
+endObjectProperties
+
+# (RegTextupdate)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 90
+y 170
+w 150
+h 20
+controlPv "$(apc):CPLRLINKSTAT"
+fgColor index 14
+fgAlarm
+bgColor index 6
+fill
+font "courier-medium-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 90
+y 150
+w 61
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 29
+bgColor index 5
+useDisplayBg
+value {
+  "Link Status"
+}
+autoSize
+endObjectProperties
+
+# (RegTextupdate)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 320
+y 170
+w 150
+h 20
+controlPv "$(apc):CPLRREADY"
+fgColor index 14
+fgAlarm
+bgColor index 6
+fill
+font "courier-medium-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 320
+y 150
+w 82
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 29
+bgColor index 5
+useDisplayBg
+value {
+  "Coupler Status"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 10
+y 340
+w 120
+h 20
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 5
+useDisplayBg
+value {
+  "Disconnect Time"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 10
+y 370
+w 120
+h 20
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 5
+useDisplayBg
+value {
+  "Last Retry Time"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 10
+y 400
+w 120
+h 20
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 5
+useDisplayBg
+value {
+  "Connect Time"
+}
+endObjectProperties
+
+# (RegTextupdate)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 140
+y 340
+w 200
+h 20
+controlPv "$(apc):CPLRTLOSTCONN"
+fgColor index 14
+fgAlarm
+bgColor index 6
+fill
+font "courier-medium-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (RegTextupdate)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 140
+y 370
+w 200
+h 20
+controlPv "$(apc):CPLRTLASTTRY"
+fgColor index 14
+fgAlarm
+bgColor index 6
+fill
+font "courier-medium-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (RegTextupdate)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 140
+y 400
+w 200
+h 20
+controlPv "$(apc):CPLRTSETCONN"
+fgColor index 14
+fgAlarm
+bgColor index 6
+fill
+font "courier-medium-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (RegTextupdate)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 450
+y 400
+w 150
+h 20
+controlPv "$(apc):CPLRNOFPKTS"
+fgColor index 14
+fgAlarm
+bgColor index 6
+fill
+font "courier-medium-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 320
+y 400
+w 120
+h 20
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 5
+useDisplayBg
+value {
+  "# Packets"
+}
+endObjectProperties
+
+# (RegTextupdate)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 450
+y 370
+w 150
+h 20
+controlPv "$(apc):CPLRNOFEXCP"
+fgColor index 14
+fgAlarm
+bgColor index 6
+fill
+font "courier-medium-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 320
+y 370
+w 120
+h 20
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 5
+useDisplayBg
+value {
+  "# Errors"
+}
+endObjectProperties
+
+# (RegTextupdate)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 450
+y 340
+w 150
+h 20
+controlPv "$(apc):CPLRNOFCONN"
+fgColor index 14
+fgAlarm
+bgColor index 6
+fill
+font "courier-medium-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 320
+y 340
+w 120
+h 20
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 5
+useDisplayBg
+value {
+  "# Connections"
+}
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 440
+y 430
+w 168
+h 16
+controlPv "SIOC:SYS0:AL00:TOD"
+precision 1
+fgColor index 14
+bgColor index 12
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 10
+y 430
+w 120
+h 16
+controlPv "SIOC:SYS0:AL00:MODE"
+precision 1
+fgColor index 14
+bgColor index 12
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 320
+y 270
+w 120
+h 20
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 5
+useDisplayBg
+value {
+  "Number of Signals"
+}
+endObjectProperties
+
+# (RegTextupdate)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 450
+y 270
+w 150
+h 20
+controlPv "$(apc):CPLRNOFSIGS"
+fgColor index 14
+fgAlarm
+bgColor index 6
+fill
+font "courier-medium-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+

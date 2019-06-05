@@ -1,0 +1,28 @@
+
+file KL2114.template
+{
+	pattern
+	{	SLOT,	REPROCEVT,
+		SIG1,		SIG1.DESC,
+		SIG1.ZNAM,	SIG1.ONAM,	SIG1.PINI,
+		SIG2,		SIG2.DESC,
+		SIG2.ZNAM,	SIG2.ONAM,	SIG2.PINI,
+		SIG3,		SIG3.DESC,
+		SIG3.ZNAM,	SIG3.ONAM,	SIG3.PINI,
+		SIG4,		SIG4.DESC,
+		SIG4.ZNAM,	SIG4.ONAM,	SIG4.PINI
+	}
+#	Include one instance of the pattern for each instance
+#	of this module, substituting the appropriate slot number
+#	and signal attributes
+	{	10,			188,
+		$(COUPLER_LOC):KL2114:SLOT$(SLOT):DOUT1, "Signal 1 Description",
+		Off,		On,			NO,
+		$(COUPLER_LOC):KL2114:SLOT$(SLOT):DOUT2, "Signal 2 Description",
+		Off,		On,			NO,
+		$(COUPLER_LOC):KL2114:SLOT$(SLOT):DOUT3, "Signal 3 Description",
+		Off,		On,			NO,
+		$(COUPLER_LOC):KL2114:SLOT$(SLOT):DOUT4, "Signal 4 Description",
+		Off,		On,			NO,
+	}
+}

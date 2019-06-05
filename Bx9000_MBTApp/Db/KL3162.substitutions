@@ -1,0 +1,40 @@
+# KL3162 2-Ch 16 bit Analog Input Module
+#
+# Macros:
+#	COUPLER		- Coupler name, required
+#	SLOT		- Slot number, required
+#	SIG1		- PV name, required
+#	SIG1.SCAN	- Scan interval, required
+#	SIG1.ADEL	- Archive Deadband, defaults to 0.1
+#	SIG1.DESC	- Description, defaults to "Signal Description"
+#	SIG1.EGUF	- Eng Units Full, defaults to 10
+#	SIG1.EGUL	- Eng Units Low, defaults to 0
+#	SIG1.HHSV	- High High Severity, defaults to NO_ALARM
+#	SIG1.HIGH	- High limit, defaults to 10
+#	SIG1.HIHI	- High High Limit, defaults to 10
+#	SIG1.HOPR	- High Operator Limit, defaults to 10
+#	SIG1.HSV	- High Severity, defaults to NO_ALARM
+#	SIG1.HYST	- Hysterisis, defaults to 0
+#	SIG1.LINR	- Scaling type, defaults to LINEAR
+#	SIG1.LLSV	- Low Low Severity, defaults to NO_ALARM
+#	SIG1.LOLO	- Low Low Limit, defaults to 0
+#	SIG1.LOPR	- Low Oper Limit, defaults to 0
+#	SIG1.LOW	- Low Limit, defaults to 0
+#	SIG1.LSV	- Low Severity, defaults to NO_ALARM
+#	SIG1.MDEL	- Montior Deadbanc, defaults to 0
+#	SIG1.PREC	- Precision, defaults to 3
+#	SIG1.SMOO	- Smoothing, defaults to 0
+#	SIG1.UNIT	- Eng Units, defaults to V
+
+file KL3162.template
+{
+#	Include one bracketed expansion for each instance
+#	of this module, substituting the appropriate slot number
+#	and signal attributes
+	{	
+		SLOT		=	8,
+		SIG1		=	$(PRE):AIN1,
+		SIG1.SCAN	=	".1 second",
+		SIG1.DESC	=	"Signal 1 Description",
+	}
+}

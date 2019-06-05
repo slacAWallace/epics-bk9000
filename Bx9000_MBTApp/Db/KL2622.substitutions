@@ -1,0 +1,20 @@
+
+file KL2622.template
+{
+	pattern
+	{	SLOT,	REPROCEVT,
+		SIG1,		SIG1.DESC,
+		SIG1.ZNAM,	SIG1.ONAM,	SIG1.PINI,
+		SIG2,		SIG2.DESC,
+		SIG2.ZNAM,	SIG2.ONAM,	SIG2.PINI,
+	}
+#	Include one instance of the pattern for each instance
+#	of this module, substituting the appropriate slot number
+#	and signal attributes
+	{	6,			188,
+		$(COUPLER_LOC):KL2622:SLOT$(SLOT):DOUT1, "Signal 1 Description",
+		Off,		On,			NO,
+		$(COUPLER_LOC):KL2622:SLOT$(SLOT):DOUT2, "Signal 2 Description",
+		Off,		On,			NO,
+	}
+}

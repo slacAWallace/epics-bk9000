@@ -1,0 +1,44 @@
+
+file KL2808.template
+{
+	pattern
+	{	SLOT,	REPROCEVT,
+		SIG1,		SIG1.DESC,
+		SIG1.ZNAM,	SIG1.ONAM,	SIG1.PINI,
+		SIG2,		SIG2.DESC,
+		SIG2.ZNAM,	SIG2.ONAM,	SIG2.PINI,
+		SIG3,		SIG3.DESC,
+		SIG3.ZNAM,	SIG3.ONAM,	SIG3.PINI,
+		SIG4,		SIG4.DESC,
+		SIG4.ZNAM,	SIG4.ONAM,	SIG4.PINI
+		SIG5,		SIG5.DESC,
+		SIG5.ZNAM,	SIG5.ONAM,	SIG5.PINI
+		SIG6,		SIG6.DESC,
+		SIG6.ZNAM,	SIG6.ONAM,	SIG6.PINI
+		SIG7,		SIG7.DESC,
+		SIG7.ZNAM,	SIG7.ONAM,	SIG7.PINI
+		SIG8,		SIG8.DESC,
+		SIG8.ZNAM,	SIG8.ONAM,	SIG8.PINI
+	}
+#	Include one instance of the pattern for each instance
+#	of this module, substituting the appropriate slot number
+#	and signal attributes
+	{	4,			188,
+		$(COUPLER_LOC):KL2808:SLOT$(SLOT):DOUT1, "Signal 1 Description",
+		Off,		On,			NO,
+		$(COUPLER_LOC):KL2808:SLOT$(SLOT):DOUT2, "Signal 2 Description",
+		Off,		On,			NO,
+		$(COUPLER_LOC):KL2808:SLOT$(SLOT):DOUT3, "Signal 3 Description",
+		Off,		On,			NO,
+		$(COUPLER_LOC):KL2808:SLOT$(SLOT):DOUT4, "Signal 4 Description",
+		Off,		On,			NO,
+		$(COUPLER_LOC):KL2808:SLOT$(SLOT):DOUT5, "Signal 5 Description",
+		Off,		On,			NO,
+		$(COUPLER_LOC):KL2808:SLOT$(SLOT):DOUT6, "Signal 6 Description",
+		Off,		On,			NO,
+		$(COUPLER_LOC):KL2808:SLOT$(SLOT):DOUT7, "Signal 7 Description",
+		Off,		On,			NO,
+		$(COUPLER_LOC):KL2808:SLOT$(SLOT):DOUT8, "Signal 8 Description",
+		Off,		On,			NO,
+	}
+}

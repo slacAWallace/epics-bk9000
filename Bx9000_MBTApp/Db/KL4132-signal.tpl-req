@@ -1,0 +1,22 @@
+# Autosave Beckhoff KL4132 Analog Output Signal PV list
+$(SIG).VAL
+$(SIG).ADEL
+$(SIG).DESC
+$(SIG).DRVH
+$(SIG).DRVL
+$(SIG).EGU
+$(SIG).EGUF
+$(SIG).EGUL
+$(SIG).HHSV
+$(SIG).HIGH
+$(SIG).HIHI
+$(SIG).HOPR
+$(SIG).HSV
+$(SIG).HYST
+$(SIG).LLSV
+$(SIG).LOLO
+$(SIG).LOPR
+$(SIG).LOW
+$(SIG).LSV
+$(SIG).MDEL
+$(SIG).PREC

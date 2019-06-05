@@ -1,0 +1,9 @@
+record(longin, "$(COUPLER_LOC):CplrBTSlot$(SLOT)")
+{
+  field(DESC, "Bus Terminal Type of slot $(SLOT)")
+  field(SCAN, "10 second")
+  field(PINI, "YES")
+  field(DTYP, "Bx9000_Info")
+  field(INP,  "@$(COUPLER):$(SLOT):BTTYPE")
+}
+

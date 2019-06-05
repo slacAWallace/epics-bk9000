@@ -1,0 +1,59 @@
+record(ai, "$(ALIAS)") {
+  field(DESC, "$(D)")
+  field(DTYP, "Soft Channel")
+  field(INP, "$(APC):M$(SLOT)_CH$(CH)_EGU  NPP MS")
+  field(PREC, "$(P)")
+  field(EGU, "$(EGU)")
+  field(HOPR, "$(H)")
+  field(LOPR, "$(L)")
+  field(HIHI, "$(HH)")
+  field(LOLO, "$(LL)")
+  field(HIGH, "$(HI)")
+  field(LOW, "$(LO)")
+  field(HHSV, "MAJOR")
+  field(LLSV, "MAJOR")
+  field(HSV, "MINOR")
+  field(LSV, "MINOR")
+  field(HYST, "$(HY)")
+  field(ADEL, "$(AD)")
+  field(MDEL, "$(MD)")
+
+}
+
+
+# Subroutine record that performs calculation for 
+# these analog signal types:
+# 1 = linear analog in
+# 2 = log analog in
+# 3 = phase mixer
+record(sub, "$(APC):M$(SLOT)_CH$(CH)_EGU") {
+  field(DESC, "$(D)")
+  field(INAM, "InitAnalogCalc")
+  field(SNAM, "AnalogCalc")
+#Signal type (see comments above)
+  field(A, "$(TYPE)")
+#Raw signal
+  field(INPB, "$(APC):M$(SLOT)_CH$(CH)_SIG NPP MS")
+  field(C, "$(OFFS)")
+  field(D, "$(COEF)")
+#Associated device, used by phase mixer
+  field(INPE, "$(ASSOC)")
+#1/-1 determined by ASSOC, used by phase mixer
+  field(F, "$(SIGN)")
+  field(PREC, "$(P)")
+  field(EGU, "$(EGU)")
+  field(HOPR, "$(H)")
+  field(LOPR, "$(L)")
+  field(HIHI, "$(HH)")
+  field(LOLO, "$(LL)")
+  field(HIGH, "$(HI)")
+  field(LOW, "$(LO)")
+  field(HHSV, "MAJOR")
+  field(LLSV, "MAJOR")
+  field(HSV, "MINOR")
+  field(LSV, "MINOR")
+  field(HYST, "$(HY)")
+  field(ADEL, "$(AD)")
+  field(MDEL, "$(MD)")
+  field(FLNK, "$(ALIAS)")
+}

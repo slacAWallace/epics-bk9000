@@ -1,0 +1,7 @@
+# Autosave Beckhoff KL2124 TTL Digital Output PV list
+$(SIG).VAL
+$(SIG).DESC
+$(SIG).ONAM
+$(SIG).OSV
+$(SIG).ZNAM
+$(SIG).ZSV

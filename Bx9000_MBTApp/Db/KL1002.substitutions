@@ -1,0 +1,19 @@
+file KL1002.template
+{
+	pattern
+	{	SLOT,
+		SIG1,		SIG1.DESC,
+		SIG1.ZNAM,	SIG1.ONAM,	SIG1.ZSV,	SIG1.OSV,	SIG1.COSV,	SIG1.SCAN,
+		SIG2,		SIG2.DESC,
+		SIG2.ZNAM,	SIG2.ONAM,	SIG2.ZSV,	SIG2.OSV,	SIG2.COSV,	SIG2.SCAN
+	}
+#	Include one instance of the pattern for each instance
+#	of this module, substituting the appropriate slot number
+#	and signal attributes
+	{	5
+		$(COUPLER_LOC):KL1002:SLOT$(SLOT):DIN1, "Signal 1 Description",
+		Off,		On,			NO_ALARM,	NO_ALARM,	NO_ALARM,	".1 second",
+		$(COUPLER_LOC):KL1002:SLOT$(SLOT):DIN2, "Signal 2 Description",
+		Off,		On,			NO_ALARM,	NO_ALARM,	NO_ALARM,	".1 second",
+	}
+}
